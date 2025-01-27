@@ -2,15 +2,17 @@
 
 A new Flutter project.
 
-## Getting Started
+## Developerska waa ;
 
-This project is a starting point for a Flutter application.
+-Adnan Said - project leader 
+-Mahamed Mohamud - member (Eng wuxuu soo sameeyey qaybta chart-page iyo code-keeda)
+-Mohiyadin Abdulahi - member (Eng wuxuu kusoo darey qaybta detail productiga  ka)
+-Juwariyo Dahir - member ( register iyo login page);
 
-A few resources to get you started if this is your first Flutter project:
+## Fruit App:
+Fruit App waxaa loogu talagalay in loo fududeeyo dadka inay si raaxo leh u baaraan una iibsadaan fruits-ka iyo khudaarta noocyadooda kala duwan . Hadafkeenu waa inaan dalban karto adigoo gurigaaga jooga wax kaste oo u baahan tahay kuna saabsan qudaarta iyo fruits-ka.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### ogow ustaad;
+ -in badanaaba projectiga aan ku sameyney local , cilad naga qabsaty wada shaqeynta githubka owgiis iyo aqoonta oo xoogaa heerkii loo baahnaa gaarsiisaneyn .
+ -balse waxaa ku dadaaleynaa inaan wax ka badalno.
+ -waa ku mahadsan tahay chalenges-kaan waxaa ogaaney shey muhiim inoo ah inaan ku hooseyno , haddana wax badan ayaan kasoo baraney waana soo sameyney.
