@@ -1,18 +1,40 @@
-# fruit_app
+Fruit App
+Overview
+Fruit App is a user-friendly application for showcasing and selling fruits. It features secure user authentication, efficient product management, and scalable architecture.
 
-A new Flutter project.
+Features
+-State Management: Riverpod for efficient and maintainable state handling.
 
-## Developerska waa ;
+-User Authentication: Firebase for secure registration and login.
 
--Adnan Said - project leader 
--Mahamed Mohamud - member (Eng wuxuu soo sameeyey qaybta chart-page iyo code-keeda)
--Mohiyadin Abdulahi - member (Eng wuxuu kusoo darey qaybta detail productiga  ka)
--Juwariyo Dahir - member ( register iyo login page);
+-Product Data: Lightweight dictionary-based data for managing products.
 
-## Fruit App:
-Fruit App waxaa loogu talagalay in loo fududeeyo dadka inay si raaxo leh u baaraan una iibsadaan fruits-ka iyo khudaarta noocyadooda kala duwan . Hadafkeenu waa inaan dalban karto adigoo gurigaaga jooga wax kaste oo u baahan tahay kuna saabsan qudaarta iyo fruits-ka.
+Project Structure
+lib: Contains main code with reusable widgets, views, models and controllers .
 
-### ogow ustaad;
- -in badanaaba projectiga aan ku sameyney local , cilad naga qabsaty wada shaqeynta githubka owgiis iyo aqoonta oo xoogaa heerkii loo baahnaa gaarsiisaneyn .
- -balse waxaa ku dadaaleynaa inaan wax ka badalno.
- -waa ku mahadsan tahay chalenges-kaan waxaa ogaaney shey muhiim inoo ah inaan ku hooseyno , haddana wax badan ayaan kasoo baraney waana soo sameyney.
+Future Plans
+Add advanced product filtering and search with full backend development .
+
+Support multiple languages.
+
+Integrate payment gateways.
+
+Contributing
+Contributions are welcome! Fork the repository and submit pull requests.
+
+Collaborators
+-Adnan Said
+
+-Mahamed Mohamud
+
+-Mohiyadin Abdulahi
+
+-Juwariyo Dahir
+
+#License
+
+Licensed under the MIT License.
+
+Contact
+
+For questions or feedback, contact us at [cadnansaid470gmail.com].
