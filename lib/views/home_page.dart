@@ -4,8 +4,10 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:fruit_app/controllers/itembag_controller.dart';
 import 'package:fruit_app/controllers/product_controller.dart';
 import 'package:fruit_app/themes/app_themes.dart';
+import 'package:fruit_app/views/OrderHistoryPage.dart';
 import 'package:fruit_app/views/chart_page.dart';
 import 'package:fruit_app/views/detail_page.dart';
+import 'package:fruit_app/widgets/Profile_Page.dart';
 import 'package:fruit_app/widgets/adds_banner_widget,.dart';
 import 'package:fruit_app/widgets/chips_widget.dart';
 import 'package:fruit_app/widgets/products_card_widget.dart'; // Ensure secondaryColor and WhiteColr are defined here.
@@ -60,7 +62,6 @@ class HomePage extends ConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Drawer Header
             UserAccountsDrawerHeader(
               decoration: BoxDecoration(color: seconadryColor),
               currentAccountPicture: CircleAvatar(
@@ -80,8 +81,6 @@ class HomePage extends ConsumerWidget {
                 style: TextStyle(color: WhiteColr),
               ),
             ),
-
-            // Navigation Items
             ListTile(
               leading: Icon(Icons.home, color: primaryColor),
               title: Text("Home", style: TextStyle(color: primaryColor)),
@@ -123,8 +122,6 @@ class HomePage extends ConsumerWidget {
                 // Navigate to Settings
               },
             ),
-
-            // Spacer and Footer
             Spacer(),
             Divider(),
             Padding(
@@ -137,58 +134,72 @@ class HomePage extends ConsumerWidget {
           ],
         ),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(25),
-          child: Column(
-            children: [
-              AddsWidget(),
-              SizedBox(
-                height: 50,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
-                  children: [
-                    Chips_widget(chipLabel: 'All'),
-                    Chips_widget(chipLabel: 'Apple'),
-                    Chips_widget(chipLabel: 'Banana'),
-                    Chips_widget(chipLabel: 'Orange'),
-                    Chips_widget(chipLabel: 'Grapes'),
-                    Chips_widget(chipLabel: 'Others'),
-                  ],
-                ),
-              ),
-              SizedBox(height: 8),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: IndexedStack(
+        index: currentIndex,
+        children: [
+          // Home content
+          SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(25),
+              child: Column(
                 children: [
-                  Text(
-                    "List Products",
-                    style: AppThems.headingOne,
+                  AddsWidget(),
+                  SizedBox(
+                    height: 50,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      shrinkWrap: true,
+                      children: [
+                        Chips_widget(chipLabel: 'All'),
+                        Chips_widget(chipLabel: 'Apple'),
+                        Chips_widget(chipLabel: 'Banana'),
+                        Chips_widget(chipLabel: 'Orange'),
+                        Chips_widget(chipLabel: 'Grapes'),
+                        Chips_widget(chipLabel: 'Others'),
+                      ],
+                    ),
                   ),
-                  Text("See All"),
+                  SizedBox(height: 8),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "List Products",
+                        style: AppThems.headingOne,
+                      ),
+                      Text("See All"),
+                    ],
+                  ),
+                  MasonryGridView.builder(
+                    physics: NeverScrollableScrollPhysics(),
+                    itemCount: products.length,
+                    shrinkWrap: true,
+                    gridDelegate:
+                        SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2),
+                    itemBuilder: (context, index) => GestureDetector(
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  DetailsPage(getIndex: index))),
+                      child: SizedBox(
+                        height: 250,
+                        child: productsCard(productIndex: index),
+                      ),
+                    ),
+                  ),
                 ],
               ),
-              MasonryGridView.builder(
-                physics: NeverScrollableScrollPhysics(),
-                itemCount: products.length,
-                shrinkWrap: true,
-                gridDelegate: SliverSimpleGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2),
-                itemBuilder: (context, index) => GestureDetector(
-                  onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => DetailsPage(getIndex: index))),
-                  child: SizedBox(
-                    height: 250,
-                    child: productsCard(productIndex: index),
-                  ),
-                ),
-              ),
-            ],
+            ),
           ),
-        ),
+          // History content (if needed)
+          OrderHistoryPage(),
+          // Chart content
+          ChartPage(),
+          // Profile content (if needed)
+          ProfilePage()
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: primaryColor,
